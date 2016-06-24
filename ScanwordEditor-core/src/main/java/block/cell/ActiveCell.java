@@ -99,14 +99,9 @@ public class ActiveCell extends TotalCell{
 	@Override
 	public boolean equals (Object obj) {
 		if(obj instanceof ActiveCell) {
-			if(((ActiveCell) obj).letter.equals(this.letter) &&
+			return (((ActiveCell) obj).letter.equals(this.letter) &&
 					((ActiveCell)obj).hDirectionWordLength == this.hDirectionWordLength &&
-						((ActiveCell)obj).vDirectionWordLength == this.vDirectionWordLength) {
-				return true;
-			}
-			else {
-				return false;
-			}
+						((ActiveCell)obj).vDirectionWordLength == this.vDirectionWordLength)? true: false;
 		}
 		return false;
 	}
@@ -114,20 +109,10 @@ public class ActiveCell extends TotalCell{
 	@Override
 	public String toString() {
 		StringBuilder buf = new StringBuilder("[AC - ");
-		buf.append(" ");
-		if (firstLink.equals("")) {
-			buf.append("   ");
-		}
-		else {
-			buf.append(firstLink);
-		}
-		buf.append(" , ");
-		if (secondLink.equals("")) {
-			buf.append("   ");
-		}
-		else {
-			buf.append(secondLink);
-		}
+		buf.append (" ");
+		buf.append ((firstLink.equals("")) ?"   ":firstLink);
+		buf.append (" , ");
+		buf.append ((secondLink.equals("")) ?"   ": secondLink);
 		buf.append(" ]");
 		return buf.toString();
 	}

@@ -44,33 +44,20 @@ public class CommentCell extends TotalCell {
 	@Override
 	public boolean equals (Object obj) {
 		if(obj instanceof CommentCell) {
-			if(((CommentCell) obj).firstLink.equals(this.firstLink)
-					&& ((CommentCell) obj).secondLink.equals(this.secondLink)) {
-				return true;
-			}
-			else {
-				return false;
-			}
+			return (((CommentCell) obj).firstLink.equals(this.firstLink)
+					&& ((CommentCell) obj).secondLink.equals(this.secondLink)) ? true: false;
 		}
-		return false;
+		else {
+			return false;
+		}
 	}
 	
 	@Override
 	public String toString () {
 		StringBuilder buf = new StringBuilder("[CC - ");
-		if (this.firstLink.equals("")) {
-			buf.append("     ");
-		} 
-		else {
-			buf.append(this.firstLink);
-		}
+		buf.append((firstLink.equals(""))?"     ":firstLink);
 		buf.append(",");
-		if (this.secondLink.equals("")) {
-			buf.append("     ");
-		} 
-		else {
-			buf.append(this.secondLink);
-		}
+		buf.append((secondLink.equals(""))?"     ":secondLink);
 		buf.append("]");
 		return buf.toString();
 	}

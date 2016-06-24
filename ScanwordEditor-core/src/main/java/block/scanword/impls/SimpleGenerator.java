@@ -11,12 +11,7 @@ public class SimpleGenerator implements ArrowsAndWordsListGenerator {
 	}
 	
 	private boolean isTypeCell(Cell cell, Class<? extends Cell> typeOfCell) {
-		if (cell.getClass().getName().equals(typeOfCell.getName())) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return (cell.getClass().getName().equals(typeOfCell.getName())) ? true: false;
 	}
 	
 	private Integer[] rewriteArray (Integer[] array, Integer firstPositionValue, Integer secondPositionValue) {

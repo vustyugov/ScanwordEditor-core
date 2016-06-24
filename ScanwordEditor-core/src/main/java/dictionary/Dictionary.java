@@ -31,11 +31,8 @@ public class Dictionary {
 	}
 
 	public Word getWord(String wordValue) {
-		if(words.get(wordValue.length()).containsKey(wordValue)) {
-			return wordsList.get(words.get(wordValue.length()).get(wordValue));
-		} else {
-			return null;
-		}
+		return (words.get(wordValue.length()).containsKey(wordValue)) 
+				? wordsList.get(words.get(wordValue.length()).get(wordValue)): null;
 	}
 	
 	public void addWord(Word word) {
@@ -76,12 +73,7 @@ public class Dictionary {
 		String word = template.toUpperCase().trim();
 		StringBuilder buf = new StringBuilder();
 		for(int index = 0; index < word.length(); index++) {
-			if(template.charAt(index) == '?') {
-				buf.append('.');
-			} 
-			else {
-				buf.append(word.charAt(index));
-			}
+			buf.append((template.charAt(index) == '?') ?'.':word.charAt(index));
 		}
 		return buf.toString();
 	}

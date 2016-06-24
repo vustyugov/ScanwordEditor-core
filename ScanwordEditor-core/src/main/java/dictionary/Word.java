@@ -10,11 +10,7 @@ public class Word {
 
 	public Word(String value, Map<DictionaryType, String> desc) {
 		this.value = value;
-		if(desc == null) {
-			description = new HashMap<DictionaryType, String>();
-		} else {
-			description = desc;
-		}
+		description = (desc == null) ? new HashMap<DictionaryType, String>(): desc;
 		categories = new LinkedList<Category>();
 	}
 	
@@ -28,11 +24,7 @@ public class Word {
 	
 	public boolean containsDescription(String desc) {
 		for(String element: description.values()) {
-			if(element.contains(desc)) {
-				return true;
-			} else {
-				return false;
-			}
+			return (element.contains(desc)) ? true: false;
 		}
 		return false;
 	}
@@ -47,12 +39,7 @@ public class Word {
 	
 	public boolean containCategory(String categoryValue) {
 		for(Category element: categories) {
-			if(element.getValue().equals(categoryValue)) {
-				return true;
-			}
-			else {
-				return false;
-			}
+			return (element.getValue().equals(categoryValue)) ? true: false;
 		}
 		return false;
 	}

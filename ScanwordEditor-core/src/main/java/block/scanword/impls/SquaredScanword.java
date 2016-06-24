@@ -99,12 +99,7 @@ public class SquaredScanword implements Scanword {
 		if(array != null){
 			if ((row >= 0 && row < rowNumber) 
 					&& (column >= 0 && column < columnNumber)) {
-						if(array[row][column] == null) {
-							return null;
-						}
-						else {
-							return array[row][column];
-						}
+						return (array[row][column] == null) ? null: array[row][column];
 			}
 		}
 		return null;
@@ -126,11 +121,6 @@ public class SquaredScanword implements Scanword {
 
 	@Override
 	public List<String> getWordsList() {
-		if (generator != null) {
-			return generator.getWordsList(array);
-		}
-		else {
-			return null;
-		}
+		return (generator != null) ? generator.getWordsList(array): null;
 	}
 }

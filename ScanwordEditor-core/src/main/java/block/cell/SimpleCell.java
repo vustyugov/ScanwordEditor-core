@@ -12,12 +12,8 @@ public class SimpleCell extends TotalCell{
 	
 	@Override
 	public boolean equals(Object obj) {
-		if(obj instanceof SimpleCell) {
-			if (((SimpleCell)obj).letter == this.letter) {
-				return true;
-			} else {
-				return false;
-			}
+		if (obj instanceof SimpleCell) {
+			return (((SimpleCell)obj).letter == this.letter) ? true: false;
 		}
 		else {
 			return false;

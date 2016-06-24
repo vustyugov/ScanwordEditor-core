@@ -40,13 +40,8 @@ public class TotalCell implements Cell {
 	
 	@Override
 	public boolean setFirstLink(String link) {
-		this.firstLink = link;
-		if(this.firstLink.equals(link)) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		firstLink = link;
+		return (firstLink.equals(link))?true:false;
 	}
 	
 	@Override
@@ -56,13 +51,8 @@ public class TotalCell implements Cell {
 
 	@Override
 	public boolean setSecondLink(String link) {
-		this.secondLink = link;
-		if(this.secondLink.equals(link)) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		secondLink = link;
+		return (this.secondLink.equals(link)) ? true: false;
 	}
 	
 	@Override
