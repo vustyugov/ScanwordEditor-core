@@ -1,6 +1,9 @@
 package block.cell;
 
+import org.apache.logging.log4j.*;
+
 public class DisableCell extends TotalCell {
+	private static Logger logger = LogManager.getLogger(DisableCell.class);
 	
 	public DisableCell() {
 		super();
@@ -8,6 +11,7 @@ public class DisableCell extends TotalCell {
 
 	@Override
 	public boolean setLetter(String letter) {
+		logger.debug("New value is {}, but can't write letter.", letter);
 		return false;
 	}
 		

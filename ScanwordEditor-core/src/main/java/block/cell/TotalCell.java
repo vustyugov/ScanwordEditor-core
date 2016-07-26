@@ -2,15 +2,22 @@ package block.cell;
 
 import java.util.regex.*;
 
+import org.apache.logging.log4j.*;
+
+
 public class TotalCell implements Cell {
 
-	protected String firstLink = "";
-	protected String secondLink = "";
+	protected String firstLink;
+	protected String secondLink;
 	protected String regex = "[à-ÿÀ-ß¸¨]";
 	protected String letter;
 	
+	private static Logger logger = LogManager.getLogger(TotalCell.class);
+	
 	public TotalCell() {
 		letter = "";
+		firstLink = "";
+		secondLink = "";
 	}
 	
 	public TotalCell(String letter) {
@@ -19,6 +26,7 @@ public class TotalCell implements Cell {
 		Matcher m = pattern.matcher(letter);
 		if(m.matches()) {
 			this.letter = letter;	
+			logger.debug("Create cell with letter {}", letter);
 		}
 	}
 	
@@ -28,8 +36,10 @@ public class TotalCell implements Cell {
 		Matcher m = pattern.matcher(letter);
 		if(m.matches()) {
 			this.letter = letter;
+			logger.debug("Old value in cell was change by new value equals {}", letter);
 			return true;
 		}
+		logger.debug("Old value in cell wasn't change");
 		return false;
 	}
 	
@@ -41,6 +51,7 @@ public class TotalCell implements Cell {
 	@Override
 	public boolean setFirstLink(String link) {
 		firstLink = link;
+		logger.debug("Value first link is {}", link);
 		return (firstLink.equals(link))?true:false;
 	}
 	
@@ -52,6 +63,7 @@ public class TotalCell implements Cell {
 	@Override
 	public boolean setSecondLink(String link) {
 		secondLink = link;
+		logger.debug("Value second link is {}", link);
 		return (this.secondLink.equals(link)) ? true: false;
 	}
 	
