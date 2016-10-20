@@ -14,6 +14,7 @@ public interface Scanword {
 	public boolean setCell(Cell cell, int row, int column);
 	public Cell getCell(int row, int column);
 	public void setActiveCellsGenerator(ArrowsAndWordsListGenerator generator);
+	public ArrowsAndWordsListGenerator getGenerator();
 	public void executeGenerator();
 	public List<String> getWordsList();
 }

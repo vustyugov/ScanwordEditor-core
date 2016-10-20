@@ -149,4 +149,9 @@ public class SquaredScanword implements Scanword {
 	public List<String> getWordsList() {
 		return (generator != null) ? generator.getWordsList(array): null;
 	}
+
+	@Override
+	public ArrowsAndWordsListGenerator getGenerator() {
+		return this.generator;
+	}
 }

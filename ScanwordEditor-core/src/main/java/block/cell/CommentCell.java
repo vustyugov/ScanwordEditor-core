@@ -63,12 +63,14 @@ public class CommentCell extends TotalCell {
 	
 	@Override
 	public String toString () {
-		StringBuilder buf = new StringBuilder("[CC - ");
+		StringBuilder buf = new StringBuilder("[CC;");
+		buf.append((letter.equals(""))?" ":letter);
+		buf.append(";");
 		buf.append((firstLink.equals(""))?"     ":firstLink);
 		buf.append(",");
 		buf.append((secondLink.equals(""))?"     ":secondLink);
 		buf.append("]");
-		logger.debug("[CC -{},{}]",firstLink, secondLink);
+		logger.debug("[CC;{};{},{}]",letter,firstLink, secondLink);
 		return buf.toString();
 	}
 }

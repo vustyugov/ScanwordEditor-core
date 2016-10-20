@@ -137,8 +137,9 @@ public class ActiveCell extends TotalCell{
 	
 	@Override
 	public String toString() {
-		StringBuilder buf = new StringBuilder("[AC - ");
-		buf.append (" ");
+		StringBuilder buf = new StringBuilder("[AC;");
+		buf.append((letter.equals("")) ?" ": letter);
+		buf.append ("; ");
 		buf.append ((firstLink.equals("")) ?"   ":firstLink);
 		buf.append (" , ");
 		buf.append ((secondLink.equals("")) ?"   ": secondLink);

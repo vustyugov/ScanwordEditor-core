@@ -27,6 +27,9 @@ public class SimpleCell extends TotalCell{
 	
 	@Override
 	public String toString() {
-		return "[SC -            ]";
+		StringBuilder buf = new StringBuilder("[SC;");
+		buf.append((letter.equals(""))?" ":letter);
+		buf.append(";           ]");
+		return buf.toString();
 	}
 }

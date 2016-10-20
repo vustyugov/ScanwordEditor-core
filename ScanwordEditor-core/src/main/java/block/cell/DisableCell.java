@@ -27,6 +27,6 @@ public class DisableCell extends TotalCell {
 	
 	@Override
 	public String toString() {
-		return "[DC -            ]";
+		return "[DC; ;           ]";
 	}
 }
